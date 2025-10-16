@@ -1,0 +1,32 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "header header header"
+    ". main-div .";
+    gap: 20px;
+}
+
+header {
+    grid-area: header;
+    
+}
+
+aside {
+    grid-area: aside;
+}
+
+video {
+    grid-area: video;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.main-div {
+    grid-area: main-div;
+    display: flex;
+    flex-direction: column;
+}

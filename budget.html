@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Budget App</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/budget.css">
+        <link rel="icon" type="image/svg+xml" href="media/favicon.svg">
+    </head>
+    <body>
+        <aside>
+            <div class="toggle-button" id="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="menu">
+                <a href="index.html" class="btn">Home</a>
+                <a href="budget.html" class="btn">Budget</a>
+                <a href="gettingstarted.html" class="btn">Getting Started</a>
+                <a href="" class="btn">Budget Tips</a>
+                
+            </nav>
+        </aside>
+        <main>
+            <div class="budget-div">
+                <header>
+                    <h1>Budget</h1>
+                    <a href="index.html">
+                        <img src="media/favicon.svg" alt="Wils-On Budgeting Icon" class="logo">
+                    </a>
+                </header>
+                <div class="button-div">
+                    <button id="add-btn">Add Category</button>
+                    <button id="add-trans">Add Transaction</button>
+                </div>
+                <div class="budget-area" id="budget-area"></div>
+                <template id="item-template">
+                    <div class="budget-item">
+                        <p contenteditable="true" class="budget-category">New budget item</p>
+                        <p class="amount" contenteditable="true">0.00</p>
+                        <button class="add-trans">+ Transaction</button>
+                        <button class="delete-item">&#128465;</button>
+                        <div class="trans-area"></div>
+                    </div>
+                </template>
+                <template id="transaction-template">
+                    <div class="trans-div">
+                        <p contenteditable="true" class="transaction">New transaction</p>
+                        <p class="amount" contenteditable="true">0.00</p>
+                        <button class="delete-item">&#128465;</button>
+                    </div>
+                </template>
+                
+                
+                <footer>&copy; 2025 Wils-On</footer>
+            </div>            
+            <script src="javascript/budget.js"></script>
+            <script src="javascript/index.js"></script>
+        </main>
+    </body>
+</html>

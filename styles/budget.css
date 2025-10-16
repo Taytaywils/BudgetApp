@@ -1,0 +1,168 @@
+/* BUDGET PAGE */
+
+.budget-div {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    height: 100vh;
+    grid-gap: 10px;
+    background: rgb(255, 223, 186);
+    padding: 0.75em;
+    grid-template-areas:
+        ". header ."
+        ". button-div ."
+        ". budget-area ."
+        "footer footer footer";
+}
+
+.budget-div header {
+    grid-area: header;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.budget-div footer {
+    grid-area: footer;
+}
+
+.budget-area {
+    grid-area: budget-area;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 8px;
+}
+
+.button-div {
+    grid-area: button-div;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+button {
+    background-color: slategray;
+    color: rgb(255, 223, 186);
+    padding: 10px 0;
+    margin: 0 1.25em;
+    border: none;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: rgb(94, 110, 127)
+}
+
+/* BUDGET ITEM */
+.budget-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: auto auto;
+    align-items: vertical;
+    gap: 10px;
+    grid-template-areas: 
+    "budget-cat amount trans-button del"
+    "trans-area trans-area trans-area trans-area";
+    padding: 10px;
+    background: lightgoldenrodyellow;
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+}
+
+.budget-item p {
+    text-wrap: wrap;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.budget-category {
+    grid-area: budget-cat;
+}
+
+.delete-item {
+    grid-area: del;
+    margin: 0.25em;
+    font-size: 1.5rem;
+    color: rgb(163, 67, 67);
+    background: none;
+    padding: 0 3px;
+}
+
+.delete-item:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.add-trans {
+    grid-area: trans-button;
+    text-wrap: nowrap;
+    background: none;
+    color: rgb(12, 12, 202);
+    margin: 0;
+    padding: 0 10px;
+}
+
+.add-trans:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.amount {
+    grid-area: amount;
+}
+
+.amount::before {
+    content: '$';
+}
+
+/* TRANSACTIONS */
+.trans-area {
+    grid-area: trans-area;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-left: 1.75em;
+}
+
+.trans-area .trans-div {
+    grid-area: trans-div;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "trans-label trans-amount trans-del";
+    padding-left: 15px
+}
+
+.chevron {
+    margin-left: -.75em;
+    margin-bottom: -1.25em;
+    font-size: 2rem;
+
+    transition: rotate 0.3s ease-in-out, translate 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.chevron.dropdown {
+    transform: rotate(180deg) translate(11.55em, -1em);
+}
+
+.transaction {
+    margin-right: 0.5em;
+    grid-area: trans-label;
+}
+
+.trans-div .amount {
+    grid-area: trans-amount;
+}
+
+.trans-div .delete-item {
+    margin: 0.25em 1em;
+    grid-area: trans-del;
+}
+
+.trans-div.dropdown {
+    display: none;
+}

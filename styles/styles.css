@@ -1,0 +1,166 @@
+html {
+    background-color: rgb(255, 223, 186);
+}
+
+header, footer {
+    text-align: center;
+    padding: 0.5em;
+}
+
+/* HOME PAGE */
+
+.index-body {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "header header header"
+    "aside main-content ."
+    "footer footer footer";
+}
+
+header {
+    grid-area: header;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+header h1 {
+    margin: 2rem auto 2rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+aside {
+    grid-area: aside;
+}
+
+.main-content {
+    grid-area: main-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-indent: 2em;
+    max-width: 800px;
+}
+
+.main-content .list-p {
+    text-indent: 0;
+    padding-left: 4.25em;
+}
+
+.main-content figure img {
+    border: px goldenrod solid;
+    box-shadow: 0px 0px 50px 8px;
+    width: 40vw;
+    height: auto;
+    max-width: 350px;
+}
+
+.main-content figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+footer {
+    grid-area: footer;
+    border-top: 1px rgb(110, 110, 110) solid;
+    margin-top: 0.75em;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: fixed;
+    top: 5em;
+    left: 0.75em;
+}
+
+nav.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toggle-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: fixed;
+    top: 1.5em;
+    left: 1em;
+    
+}
+
+.toggle-button span {
+    display: block;
+    background-color: black;
+    border-radius: 0.125em;
+    width: 2em;
+    height: 0.25em;
+    margin-bottom: 0.25em;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.toggle-button span:last-child {
+    margin-bottom: 0;
+}
+
+.toggle-button.toggle span:first-child {
+    transform: translate(0, 0.5em) rotate(45deg);
+}
+
+.toggle-button.toggle span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.toggle-button.toggle span:last-child {
+    transform: translate(0px, -0.5em) rotate(-45deg);
+}
+
+
+
+nav a {
+    display: inline-block;
+    font-size: 1rem;
+    background-color: slategray;
+    color: rgb(255, 223, 186);
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: small;
+}
+
+nav a:hover {
+    background: rgb(94, 110, 127);  
+}
+
+a {
+    color: rgb(10, 127, 136);
+}
+
+.logo {
+    width: 2em;
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+}
