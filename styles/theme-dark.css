@@ -1,0 +1,72 @@
+
+header, header a {
+    background-color: transparent;
+}
+
+.logo2 {
+    display: inline-block;
+}
+
+.logo1 {
+    display: none;
+}
+
+nav a {
+    border-radius: 65px 65px 0 0;
+    padding: 60px 10px;
+    margin: 0;
+}
+
+.dark-theme-img {
+    display: inline;
+}
+
+#witch {
+    width: 10vw;
+    animation: flyAcross 3s ease-in-out forwards;
+}
+
+#witch:hover {
+    animation: flyBack 3s ease-in-out forwards;
+}
+
+@keyframes flyAcross {
+    0%   { transform: translateX(-1000%); }
+    33%  { transform: translate(-200%, -50%); }
+    50%  { transform: translate(400%, -100%) scaleX(-1); }
+    75%  { transform: translate(250%, -200%) scaleX(-1); }
+    100% { transform: translateX(0) scaleX(-1); }
+}
+
+/* COLOR CHANGES */
+html, body, .index-body, .budget-div {
+    background-color: rgb(39, 39, 39);
+    color: rgb(219, 219, 219);
+}
+
+.toggle-button span {
+    background-color: rgb(219, 219, 219);
+}
+
+nav a {
+    color: rgb(219, 219, 219)
+}
+
+button {
+    color: rgb(219, 219, 219)
+}
+
+.budget-area {
+    background: rgb(48, 48, 48);
+}
+
+.budget-item {
+    background-color: rgb(39, 39, 39);
+    border-color: rgb(219, 219, 219)
+}
+
+.trans-area {
+    background-color: rgb(160, 160, 160);
+    color: white;
+    border-radius: 10px;
+}

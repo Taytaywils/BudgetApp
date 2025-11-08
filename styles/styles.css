@@ -1,3 +1,5 @@
+/*Added Media Query to make it more responsive */
+
 html {
     background-color: rgb(255, 223, 186);
 }
@@ -158,9 +160,71 @@ a {
     color: rgb(10, 127, 136);
 }
 
-.logo {
+#theme-toggle img {
+    width: 100px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    animation: shake 11s ease-in-out 0.5s infinite;
+}
+
+@keyframes shake {
+    0%   { transform: rotate(-15deg); }
+    2%   { transform: rotate(15deg); }
+    4%   { transform: rotate(-15deg); }
+    6%   { transform: rotate(15deg); }
+    8%   { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.logo1, .logo2 {
     width: 2em;
+    height: auto;
     position: fixed;
     top: 1rem;
     right: 2rem;
+}
+
+.logo2 {
+    display: none;
+}
+
+.dark-theme-img {
+    display: none;
+}
+
+@media (max-width: 960px) {
+
+    .toggle-button span {
+        border-radius: 0.5em;
+        width: 3em;
+        height: 0.3em;
+        margin-bottom: 0.25em;
+    }
+
+    .toggle-button.toggle span:first-child {
+        transform: translate(0, 0.55em) rotate(45deg);
+    }
+
+    .toggle-button.toggle span:last-child {
+        transform: translate(0px, -0.55em) rotate(-45deg);
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    .index-body {
+        grid-template-areas: 
+        "header header header"
+        "main-content main-content main-content"
+        "footer footer footer";
+        margin: 0 15px;
+        align-items: center;
+    }
+
+    .main-content .list-p {
+        padding: 0;
+    }
 }
